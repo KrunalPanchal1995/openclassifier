@@ -22,14 +22,14 @@
 A packing line must send ripe fruit to the shop and keep unripe fruit back. A camera measures two numbers for each fruit: its size in centimetres and a colour score from 0 (green) to 10 (deep red). Nobody tells the machine what ripe means; we give it a rule. How should the rule look, how do we draw it, and how do we count the ways it goes wrong? (General education with made-up data.)
 
 ## B. Concept and theory
-A classifier is a rule that maps measurements to a class. Each fruit is a point (x, y) = (size, colour). The simplest rule asks one question about one number: is the size above t? A better rule mixes both numbers: it calls a fruit ripe when x cos(a) + y sin(a) is greater than c. The set of points where the answer flips is the decision boundary, here a straight line; the angle a says which way the line faces and c says how far it sits from the origin. Call 'ripe' the positive class. A rule can go wrong in two different ways: a false alarm (false positive) calls an unripe fruit ripe, and a miss (false negative) calls a ripe fruit unripe. They are counted separately because they usually cost different amounts. Sliding the boundary towards the ripe cluster removes false alarms but creates misses, and the other way round.
+A classifier is a rule that maps measurements to a class. Each fruit is a point (x, y) = (size, colour). The simplest rule asks one question about one number: is the size above t? A better rule mixes both numbers: it calls a fruit ripe when x cos(a) + y sin(a) is greater than c. The set of points where the answer flips is the decision boundary, here a straight line; the angle a sets the direction at right angles to the line (its normal) and c says how far the line sits from the origin along that direction. Call 'ripe' the positive class. A rule can go wrong in two different ways: a false alarm (false positive) calls an unripe fruit ripe, and a miss (false negative) calls a ripe fruit unripe. They are counted separately because they usually cost different amounts. Sliding the boundary towards the ripe cluster removes false alarms but creates misses, and the other way round.
 
 | Symbol | Meaning | Unit |
 |---|---|---|
 | x | fruit size | cm |
 | y | colour score (0 green to 10 red) | score units |
 | a | angle of the boundary's normal direction | degrees |
-| c | offset of the boundary from the origin | score units |
+| c | offset of the boundary from the origin, measured along the normal direction | score units |
 | FA | false alarms: unripe fruit called ripe | count |
 | miss | ripe fruit called unripe | count |
 
@@ -89,6 +89,7 @@ Think about what each mistake costs the packing line.
 Both are wrong decisions, but they cost different things. Sending an unripe fruit to the shop (false alarm) loses a customer's trust; keeping a ripe fruit back (miss) wastes a good fruit. For a smoke alarm a miss (fire, no alarm) is far worse than a false alarm. The total number of mistakes hides this, so we report both.
 
 </details>
+
 **Question type B: Numerical.** For the twelve fruit of the worked example, use the size-only rule 'ripe if size > 5' (that is a = 0 degrees, c = 5). Count the false alarms, the misses and the accuracy.
 
 <details>
@@ -104,6 +105,7 @@ List the sizes of the unripe fruit and the ripe fruit and mark which are above 5
 Unripe sizes: 2, 3, 4, 3.5, 5, 6; only 6 is above 5, so 1 false alarm (size exactly 5 is not above 5). Ripe sizes: 4.5, 6, 7, 8, 7.5, 5.5; only 4.5 is not above 5, so 1 miss. Correct = 12 - 2 = 10, accuracy = 10 / 12 = 0.833. Sanity check: using colour as well (the 45 degree line) did better, with only 1 mistake.
 
 </details>
+
 **Question type C: Graph and simulation interpretation.** In the trade-off graph for 200 random fruit with the 45 degree boundary, what happens to the two counts as the offset c increases from 2 to 11? Where do they cross?
 
 <details>
@@ -119,6 +121,7 @@ A larger c moves the line towards the ripe cluster.
 False alarms fall steadily (96 at c = 2, with 0 misses) because fewer fruit are called ripe, and misses rise from 0. The curves cross near c = 6.6, where the two counts are about equal. At c = 6.7 the rule makes 3 false alarms and 4 misses out of 200.
 
 </details>
+
 **Question type D: Design and optimisation challenge.** Design: the shop says a false alarm (unripe fruit on the shelf) is worse than a miss. Should you move the boundary left or right of c = 6.7? What do you give up? How would you decide how far?
 
 <details>
@@ -142,7 +145,7 @@ Score yourself with [RUBRIC.md](../../RUBRIC.md). Print the [activity sheet](act
 |---|---|
 | The best classifier is the one with the fewest mistakes of any kind. | That depends on what each mistake costs. Two rules with the same total can have very different false alarms and misses. |
 | A decision boundary is something the data contains. | It is a choice made by the rule. Different rules draw different boundaries through the same points. |
-| One feature is enough if it is a good one. | Using size alone made 22 mistakes of 200 fruit; adding colour cut that to 7. |
+| One feature is enough if it is a good one. | In this session's 200-fruit data, size alone made 22 mistakes; adding colour cut that to 7. |
 
 ## Glossary
 - **classifier**: a rule that turns measurements into a class label
