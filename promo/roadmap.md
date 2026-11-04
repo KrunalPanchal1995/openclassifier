@@ -2,16 +2,6 @@
 
 This is the path, not the code. Each milestone says what you learn, what you build, and how you know it works. Pick one and open a pull request. See [CONTRIBUTING.md](../CONTRIBUTING.md).
 
-## Session 4: Tune the forest by cross-validation
-
-**You will learn:** Choosing depth and the number of trees with k-fold cross-validation on the training data only, and random feature subsets at each split.
-
-**You will build:** A forest whose depth is chosen by your own cross-validation loop.
-
-**Checkpoint (not met by the shipped code):** Mean test accuracy of at least 0.75 over the 20 training sets of the Session 3 experiment (the shipped forest of depth 12 gives 0.716).
-
-**Difficulty:** intermediate
-
 ## Session 5: A threshold for each group
 
 **You will learn:** Equalising false-positive rates by group and what it costs elsewhere; why different fairness definitions cannot all hold at once.
