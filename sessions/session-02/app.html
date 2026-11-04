@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Session 2: the base-rate trap</title>
 <style>
-  :root { --bg:#ffffff; --fg:#14181f; --muted:#5b6472; --card:#f3f5f8; --accent:#1f6feb; --good:#1a7f37; --bad:#b42318; --line:#d7dce3; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#0e1116; --fg:#e6e9ee; --muted:#9aa3b2; --card:#171b22; --accent:#58a6ff; --good:#3fb950; --bad:#f97066; --line:#2a313c; } }
+  :root { --bg:#ffffff; --fg:#14181f; --muted:#5b6472; --card:#f3f5f8; --accent:#003f7f; --good:#c86a00; --bad:#d81b60; --line:#d7dce3; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0e1116; --fg:#e6e9ee; --muted:#9aa3b2; --card:#171b22; --accent:#3b8fe0; --good:#ffc857; --bad:#e0457b; --line:#2a313c; } }
   * { box-sizing: border-box; }
   body { margin:0; padding:16px; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, sans-serif; }
   main { max-width: 780px; margin: 0 auto; }
@@ -123,7 +123,7 @@ if (graph === "pos") {
     ctx.fillStyle = C.fg; ctx.textAlign = "center"; ctx.font = "bold 20px system-ui"; ctx.fillText(cells[r][c].toFixed(1), gx + c * cw + cw / 2, gy + r * ch + 34);
     ctx.font = "12px system-ui"; ctx.fillText(cells[r][2 + c], gx + c * cw + cw / 2, gy + r * ch + 56);
   }
-  ctx.fillStyle = C.muted; ctx.font = "12px system-ui"; ctx.fillText("PPV = TP / (TP + FP) = the green share of the bar", W / 2, 350);
+  ctx.fillStyle = C.muted; ctx.font = "12px system-ui"; ctx.fillText("PPV = TP / (TP + FP) = the orange share of the bar", W / 2, 350);
 } else {
   const A = axes({ x: [0, 50], y: [0, 100], xl: "prevalence (% of people who have the condition)", yl: "positive predictive value (%)", title: "A positive result means little when the condition is rare" }, C);
   curve(x => 100 * ppvAt(x), A, C.accent, 0, 50, 200);
