@@ -1,4 +1,4 @@
-# Activity sheet: openclassifier, Session 4: Read a netlist: text in, voltages out
+# Activity sheet: openclassifier, Session 4: Tune the forest by cross-validation
 
 Name: ____________________   Date: ____________
 

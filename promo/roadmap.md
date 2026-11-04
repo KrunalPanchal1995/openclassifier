@@ -2,16 +2,6 @@
 
 This is the path, not the code. Each milestone says what you learn, what you build, and how you know it works. Pick one and open a pull request. See [CONTRIBUTING.md](../CONTRIBUTING.md).
 
-## Session 5: A threshold for each group
-
-**You will learn:** Equalising false-positive rates by group and what it costs elsewhere; why different fairness definitions cannot all hold at once.
-
-**You will build:** A tool that picks one threshold per group and reports both groups' error rates.
-
-**Checkpoint (not met by the shipped code):** A false-positive-rate gap of at most 0.01 between the two groups at the Session 3 settings (shipped single threshold: gap 0.15), while both true-positive rates stay at least 0.6.
-
-**Difficulty:** intermediate
-
 ## Session 6: Beat the screening cost
 
 **You will learn:** Cost-sensitive learning: class weights, resampling and calibrated probabilities.
