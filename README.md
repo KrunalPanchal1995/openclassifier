@@ -79,6 +79,8 @@ Every session also opens in your browser with sliders (no install): [live apps](
 | 2 | [Trees, neighbours and the confusion matrix](sessions/session-02/README.md) | Level 2: mathematical engineering model | 90 min | [open](https://krunalpanchal1995.github.io/openclassifier/session-02/) |
 | 3 | [Judging a classifier honestly](sessions/session-03/README.md) | Level 3: simulation and validation | 90 min | [open](https://krunalpanchal1995.github.io/openclassifier/session-03/) |
 
+**Session 1 in other languages:** [हिन्दी](sessions/session-01/README.hi.md) · [தமிழ்](sessions/session-01/README.ta.md) · [తెలుగు](sessions/session-01/README.te.md) · [മലയാളം](sessions/session-01/README.ml.md)
+
 Each session follows the same six steps: A real-world problem, B concept and theory, C visual explanation, D interactive simulation, E worked example and experiment, F assessment and design challenge. Each ends with `checkpoint.py`, which prints `PASS` or `FAIL` against reference numbers. Session 3 also contains the real-world mini-project: **Choose a model and a threshold for a synthetic screening problem**.
 
 ## Architecture
